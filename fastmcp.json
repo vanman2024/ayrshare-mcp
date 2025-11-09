@@ -59,11 +59,7 @@
     "log_level": "INFO",
     "env": {
       "AYRSHARE_API_KEY": "${AYRSHARE_API_KEY}",
-      "AYRSHARE_PROFILE_KEY": "${AYRSHARE_PROFILE_KEY}",
-      "AYRSHARE_BASE_URL": "${AYRSHARE_BASE_URL}",
-      "LOG_FORMAT": "${LOG_FORMAT}",
-      "RATE_LIMIT_PER_MINUTE": "${RATE_LIMIT_PER_MINUTE}",
-      "RATE_LIMIT_PER_HOUR": "${RATE_LIMIT_PER_HOUR}"
+      "AYRSHARE_PROFILE_KEY": "${AYRSHARE_PROFILE_KEY}"
     }
   },
   "metadata": {
