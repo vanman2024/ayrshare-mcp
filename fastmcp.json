@@ -1,0 +1,125 @@
+{
+  "$schema": "https://gofastmcp.com/public/schemas/fastmcp.json/v1.json",
+  "name": "ayrshare-mcp",
+  "version": "1.0.0",
+  "description": "FastMCP server for Ayrshare Social Media API - comprehensive multi-platform social media posting with 75+ tools across 15 API categories",
+  "source": {
+    "path": "server.py",
+    "entrypoint": "mcp"
+  },
+  "environment": {
+    "python": ">=3.10",
+    "dependencies": [
+      "fastmcp>=2.0.0",
+      "httpx>=0.27.0",
+      "python-dotenv>=1.0.0",
+      "pydantic>=2.0.0"
+    ],
+    "env": {
+      "AYRSHARE_API_KEY": {
+        "description": "Your Ayrshare API key from https://app.ayrshare.com/api-key",
+        "required": true
+      },
+      "AYRSHARE_PROFILE_KEY": {
+        "description": "Optional profile key for multi-tenant scenarios",
+        "required": false
+      },
+      "AYRSHARE_BASE_URL": {
+        "description": "Ayrshare API base URL",
+        "default": "https://app.ayrshare.com/api"
+      },
+      "AYRSHARE_TIMEOUT": {
+        "description": "Request timeout in seconds",
+        "default": "30"
+      },
+      "AYRSHARE_DEBUG": {
+        "description": "Enable debug logging",
+        "default": "false"
+      },
+      "TRANSPORT": {
+        "description": "Transport mode: stdio (default) or http",
+        "default": "stdio"
+      },
+      "HOST": {
+        "description": "HTTP server host (only used with http transport)",
+        "default": "0.0.0.0"
+      },
+      "PORT": {
+        "description": "HTTP server port (only used with http transport)",
+        "default": "8000"
+      },
+      "LOG_LEVEL": {
+        "description": "Logging level: DEBUG, INFO, WARNING, ERROR, CRITICAL",
+        "default": "INFO"
+      },
+      "LOG_FORMAT": {
+        "description": "Log format: json or text",
+        "default": "json"
+      },
+      "RATE_LIMIT_PER_MINUTE": {
+        "description": "Maximum requests per minute (0 to disable)",
+        "default": "60"
+      },
+      "RATE_LIMIT_PER_HOUR": {
+        "description": "Maximum requests per hour (0 to disable)",
+        "default": "1000"
+      }
+    }
+  },
+  "deployment": {
+    "transport": "stdio",
+    "log_level": "INFO",
+    "env": {
+      "AYRSHARE_API_KEY": "${AYRSHARE_API_KEY}",
+      "AYRSHARE_PROFILE_KEY": "${AYRSHARE_PROFILE_KEY}",
+      "AYRSHARE_BASE_URL": "${AYRSHARE_BASE_URL}",
+      "LOG_FORMAT": "${LOG_FORMAT}",
+      "RATE_LIMIT_PER_MINUTE": "${RATE_LIMIT_PER_MINUTE}",
+      "RATE_LIMIT_PER_HOUR": "${RATE_LIMIT_PER_HOUR}"
+    }
+  },
+  "metadata": {
+    "author": "FastMCP Build System",
+    "license": "MIT",
+    "repository": "https://github.com/yourusername/ayrshare-mcp",
+    "keywords": [
+      "ayrshare",
+      "social-media",
+      "multi-platform-posting",
+      "instagram",
+      "facebook",
+      "twitter",
+      "linkedin",
+      "tiktok",
+      "youtube",
+      "pinterest",
+      "reddit",
+      "mcp",
+      "fastmcp"
+    ],
+    "features": {
+      "tools_count": 75,
+      "resources_count": 5,
+      "prompts_count": 5,
+      "authentication": "bearer_token",
+      "rate_limiting": true,
+      "logging": true,
+      "health_check": true,
+      "platforms": [
+        "facebook",
+        "instagram",
+        "twitter",
+        "linkedin",
+        "tiktok",
+        "youtube",
+        "pinterest",
+        "reddit",
+        "snapchat",
+        "telegram",
+        "threads",
+        "bluesky",
+        "gmb"
+      ]
+    }
+  }
+}
