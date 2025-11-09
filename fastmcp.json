@@ -36,18 +36,6 @@
         "description": "Enable debug logging",
         "default": "false"
       },
-      "TRANSPORT": {
-        "description": "Transport mode: stdio (default) or http",
-        "default": "stdio"
-      },
-      "HOST": {
-        "description": "HTTP server host (only used with http transport)",
-        "default": "0.0.0.0"
-      },
-      "PORT": {
-        "description": "HTTP server port (only used with http transport)",
-        "default": "8000"
-      },
       "LOG_LEVEL": {
         "description": "Logging level: DEBUG, INFO, WARNING, ERROR, CRITICAL",
         "default": "INFO"
@@ -67,7 +55,7 @@
     }
   },
   "deployment": {
-    "transport": "stdio",
+    "transport": "http",
     "log_level": "INFO",
     "env": {
       "AYRSHARE_API_KEY": "${AYRSHARE_API_KEY}",
